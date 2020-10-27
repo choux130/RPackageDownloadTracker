@@ -1,2 +1,16 @@
-### How to reproduce this web app using docker? 
+### How to reproduce this web app?
 
+1. Clone the repo.  
+`git clone. https://github.com/choux130/RPackageDownloadTracker.git`
+
+2. Go to the project directory.
+`cd RPackageDownloadTracker`  
+
+3. Build the docker image.  
+`docker build -t rpkgdownloadtracker .` 
+
+4. Run the image in a container.   
+`docker run -p 3838:3838 rpkgdownloadtracker`
+
+5. Open the app in localhost. 
+http://localhost:3838/
