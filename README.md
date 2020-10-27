@@ -12,5 +12,5 @@
 4. Run the image in a container.   
 `docker run -p 3838:3838 rpkgdownloadtracker`
 
-5. Open the app in localhost. 
+5. Open the app in localhost (It might take a few seconds for the first time load). 
 http://localhost:3838/
