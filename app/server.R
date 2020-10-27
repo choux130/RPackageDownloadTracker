@@ -22,7 +22,7 @@ shinyServer(function(input, output, session) {
           " tab you can select the packages you want to track and in ", 
           img(src = "trending.png") , " and ", img(src = "top_downloaded.png"),
           "you can see the current trending and top downloaded packages with their information.", 
-          "The following is an example about what you are going to see in a super fast mode. Hope you also enjoy watching data changes by time like me does!!"
+          strong("The following is an example about what you are going to see in a super fast mode (update every 5 seconds). Hope you also enjoy watching data changes by time like I do!!", style="color:red")
           ),
       br(),
       br())
