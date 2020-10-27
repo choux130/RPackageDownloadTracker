@@ -232,7 +232,7 @@ prepareFinalPlotData_YourPackage = function(df_external, selected_pkg){
 }
 
 #### React Table ---------------------------------------------------------------
-printReactable = function(df, arrange_var, arrange_type, height = "780",...){
+printReactable = function(df, arrange_var, arrange_type, height = "850",...){
   dots = list(...)
   
   # browser()
