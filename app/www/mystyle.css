@@ -1,0 +1,23 @@
+.tag {
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 12px;
+    padding:15px;
+    margin:5px;
+    background-color: #eee;
+}
+  
+.num-high {
+  display: table;
+  color: #FFFFFF;
+  padding:15px;
+  background-color: hsl(121, 33%, 23%); 
+}
+
+.num-low {
+  display: table;
+  color: #FFFFFF; 
+  padding:15px;
+  background-color: hsl(0, 75%, 32%); 
+}
+
