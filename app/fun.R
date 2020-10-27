@@ -229,14 +229,14 @@ prepareFinalPlotData_YourPackage = function(df_external, selected_pkg){
 }
 
 #### React Table ---------------------------------------------------------------
-printReactable = function(df, arrange_var, arrange_type, ...){
+printReactable = function(df, arrange_var, arrange_type, height = "780",...){
   dots = list(...)
   
   # browser()
   reactable(df, 
             showSortable = TRUE,
             fullWidth = TRUE,
-            height = '780',
+            height = height,
             highlight = TRUE,
             searchable = TRUE, 
             defaultSortOrder = arrange_type,

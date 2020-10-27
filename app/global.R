@@ -19,6 +19,6 @@ plan(multisession)
 
 period_getFakeData_sec = 5
 period_generateFakeData_millisec = period_getFakeData_sec * 1000
-period_getRealData_sec = 300
+period_getRealData_sec = 1800
 period_getRealData_millisec = period_getRealData_sec * 1000
 

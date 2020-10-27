@@ -41,7 +41,7 @@ shinyUI(
                                          column(10,
                                                 shinycssloaders::withSpinner(reactableOutput("table_spk_top_download")))
                                          )),
-                           bs4TabPanel(tabName = "Your Pacakges", 
+                           bs4TabPanel(tabName = "Your Packages", 
                                        fluidRow(
                                          column(2,
                                                 uiOutput('selector_pkg_ui'),

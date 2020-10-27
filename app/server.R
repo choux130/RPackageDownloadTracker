@@ -8,7 +8,25 @@ shinyServer(function(input, output, session) {
   
   #### Tab: About --------------------------------------------------------------
   output$intro = renderUI({
-    "this is how it should look like"
+    text = paste0(
+      br(),
+      h5('What is this?'), 
+      div("R Package Download Tacker is a web app that can not only show you what are the current trending and top downloaded packages in CRAN but also help you track your favorite packages' daily downloads. This app will check the data resources every 30 minutes and update the dashboard immediately when there is new data coming in. So all the data you are seeing in this dashboard will be most updated."),
+      br(),
+      h5("Where does the data come from?"),
+      div("The data are mainly from these three ways. Web scraping the ", a("CRAN website", href = "https://cran.r-project.org"), " to get the whole list of packages in CRAN and their titles and topics. ",a("API of the CRAN downloads database", href = "https://github.com/r-hub/cranlogs.app"), "to get a list of trending and the top dowloaded packages. ", "And, the R package ", a("cranlogs", href="https://github.com/r-hub/cranlogs"), "to get daily downloads of the packages for the last month."),
+      br(),
+      h5("What can I expect to see?"),
+      div("You can expect to see that the sparklines in tables change everyday which give you a rough idea about how popular your packages are in CRAN. In ", 
+          img(src = "your_packages.png"), 
+          " tab you can select the packages you want to track and in ", 
+          img(src = "trending.png") , " and ", img(src = "top_downloaded.png"),
+          "you can see the current trending and top downloaded packages with their information.", 
+          "The following is an example about what you are going to see in a super fast mode. Hope you also enjoy watching data changes by time like me does!!"
+          ),
+      br(),
+      br())
+    HTML(text)
   })
 
   observe({
@@ -37,7 +55,7 @@ shinyServer(function(input, output, session) {
     req(!is.null(values$df_plot_fake))
     values$df_plot_fake %>%
       select(Package, Title, Topic, Count, `Today's Count`) %>%
-      printReactable(., arrange_var = "Package", arrange_type = "asc")
+      printReactable(., arrange_var = "Package", arrange_type = "asc", height = "400")
   })
 
   #### Shared between tabs (Trending, Top Downloaded, Your Packages) -----------
