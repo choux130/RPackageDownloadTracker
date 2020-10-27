@@ -132,7 +132,7 @@ shinyServer(function(input, output, session) {
                                          formatC(nrow(values$df_external$df_title), format="d", big.mark=",")),
                                   ")")),
                    selected = c("DT", "gt", "reactable", "flextable", 
-                                "huxtable", "kableExtra", "magrittr"),
+                                "huxtable", "kableExtra", "data.table"),
                    choices = sort(values$df_external$df_title$Package),
                    options = list(maxOptions = nrow(values$df_external$df_title)),
                    multiple = TRUE)

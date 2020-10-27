@@ -85,7 +85,10 @@ getPackageTopic = function(){
   topics = rvest::html_nodes(webpage,'td a') %>% 
     rvest::html_text(trim=TRUE) 
   
-  df_topic = bind_rows(future.apply::future_lapply(topics, getPackageByTopic))
+  df_topic = bind_rows(future.apply::future_lapply(topics, getPackageByTopic)) %>% 
+    group_by(Package) %>% 
+    summarise(Topic = paste0(Topic, collapse = "|"), .groups = 'drop') %>% 
+    ungroup(.)
   return(df_topic)
 }
 getPackageByTopic = function(topic){
@@ -262,9 +265,10 @@ printReactable = function(df, arrange_var, arrange_type, height = "780",...){
               Topic = colDef(minWidth = 60,
                              sortable = TRUE,
                              cell = function(value, index) {
+                               # browser()
                                # add hyperlink to all the topics in one cell
                                if (value != "Others"){
-                                 all_types = strsplit(value, ", ") %>% unlist(.)
+                                 all_types = strsplit(value, "[|]") %>% unlist(.)
                                  urls = sprintf("https://cran.r-project.org/web/views/%s.html", all_types)
                                  ls = list()
                                  for (i in 1:(length(all_types)*2 - 1)){

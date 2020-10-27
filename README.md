@@ -3,7 +3,7 @@
 1. Clone the repo.  
 `git clone. https://github.com/choux130/RPackageDownloadTracker.git`
 
-2. Go to the project directory.
+2. Go to the project directory.  
 `cd RPackageDownloadTracker`  
 
 3. Build the docker image.  
