@@ -17,12 +17,12 @@ shinyServer(function(input, output, session) {
       div("The data are mainly from these three ways. Web scraping the ", a("CRAN website", href = "https://cran.r-project.org"), " to get the whole list of packages in CRAN and their titles and topics. ",a("API of the CRAN downloads database", href = "https://github.com/r-hub/cranlogs.app"), "to get a list of trending and the top dowloaded packages. ", "And, the R package ", a("cranlogs", href="https://github.com/r-hub/cranlogs"), "to get daily downloads of the packages for the last month."),
       br(),
       h5("What can I expect to see?"),
-      div("You can expect to see that the sparklines in tables change everyday which give you a rough idea about how popular your packages are in CRAN. In ", 
+      div("You can expect to see that the sparklines in tables change every day which gives you a rough idea about how popular your packages are in CRAN. In ", 
           img(src = "your_packages.png"), 
           " tab you can select the packages you want to track and in ", 
           img(src = "trending.png") , " and ", img(src = "top_downloaded.png"),
           "you can see the current trending and top downloaded packages with their information.", 
-          strong("The following is an example about what you are going to see in a super fast mode (update every 5 seconds). Hope you also enjoy watching data changes by time like I do!!", style="color:red")
+          strong("The following is an example about what you are going to see in a super-fast mode (update every 5 seconds). Hope you also enjoy watching data changes by time like I do!!", style="color:red")
           ),
       br(),
       br())
