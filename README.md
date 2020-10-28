@@ -1,7 +1,7 @@
 ### How to reproduce this web app?
 
 1. Clone the repo.  
-`git clone. https://github.com/choux130/RPackageDownloadTracker.git`
+`git clone https://github.com/choux130/RPackageDownloadTracker.git`
 
 2. Go to the project directory.  
 `cd RPackageDownloadTracker`  
