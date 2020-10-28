@@ -14,3 +14,5 @@
 
 5. Open the app in localhost (It might take a few seconds for the first time load).  
 http://localhost:3838/
+
+![image](https://drive.google.com/uc?export=view&id=15i_QHIam7GqaZhbM-7v18x73YYO_l1S3)
