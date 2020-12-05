@@ -73,14 +73,15 @@ shinyServer(function(input, output, session) {
     t1 = Sys.time()
     df_all = tryCatch({ getExternalData() },
                       error = function(e) { "error" }) 
-    if (class(df_all) == "list"){
-      values$df_external = df_all
-    } 
+    values$df_external = df_all
+
     message(paste0("[ Spent ", round(Sys.time() - t1, 2), " sec]"))
     message("[End: getExternalData()]")
   })
   output$time_your_pkg <-output$time_top_download <- output$time_trending <- renderUI({
     req(!is.null(values$df_external))
+    validate(need(class(values$df_external) == "list", "Something wrong for the API. Please inspect the API"))
+    
     paste0(h6(strong("Last Updated Time")),
            tags$p(format(as.POSIXlt(values$df_external$last_time_getRealData, tz = "UTC"), usetz = TRUE)),
            h6(strong("Next Scheduled Update Time")), 
@@ -91,6 +92,7 @@ shinyServer(function(input, output, session) {
   #### Tab: Trending -----------------------------------------------------------
   output$table_spk_trending = renderReactable({
     req(!is.null(values$df_external))
+    validate(need(class(values$df_external) == "list", "Something wrong for the API. Please inspect the API"))
     df_plot_trending = prepareFinalPlotData_Trending(values$df_external)
 
     df_plot_trending %>% 
@@ -101,6 +103,7 @@ shinyServer(function(input, output, session) {
   #### Tab: Top Downloaded -----------------------------------------------------
   df_plot_top_download = reactive({
     req(!is.null(values$df_external) & !is.null(input$selector_period))
+    validate(need(class(values$df_external) == "list", "Something wrong for the API. Please inspect the API"))
     if (input$selector_period == "last-month"){
       df_top_download = values$df_external$df_top_download_last_month
     } else if (input$selector_period == "last-week"){
@@ -125,6 +128,7 @@ shinyServer(function(input, output, session) {
   #### Tab: Your Packages ------------------------------------------------------
   output$selector_pkg_ui = renderUI({
     req(!is.null(values$df_external))
+    validate(need(class(values$df_external) == "list", "Something wrong for the API. Please inspect the API"))
     selectizeInput(inputId = 'selector_pkg',
                    label = HTML(paste0("Packages (Today's total ",
                                   tags$a(href = "https://cran.r-project.org//web/packages/",
