@@ -9,7 +9,7 @@ library(shinyWidgets)
 library(shinycssloaders)
 library(bs4Dash)
 
-library(tidyverse)
+library(dplyr)
 library(data.table)
 library(cranlogs)
 source("fun.R")
