@@ -15,4 +15,4 @@
 5. Open the app in localhost (It might take a few seconds for the first time load).  
 http://localhost:3838/
 
-![image](https://drive.google.com/file/d/15i_QHIam7GqaZhbM-7v18x73YYO_l1S3/view?usp=sharing)
+![RPackageDownloadTracker_small](https://user-images.githubusercontent.com/15528061/194072390-51e5aed6-86c4-48e7-99bb-58da639f9fd9.gif)
