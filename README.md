@@ -1,3 +1,7 @@
+This is the project I submitted for the [2020 Rstudio Table Contest](https://www.rstudio.com/blog/announcing-the-2020-rstudio-table/). \
+My submission: [https://community.rstudio.com/t/r-package-download-tracker-table-contest-submission/86134](https://community.rstudio.com/t/r-package-download-tracker-table-contest-submission/86134)
+
+
 ### How to reproduce this web app?
 
 1. Clone the repo.  
